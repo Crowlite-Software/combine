@@ -1,0 +1,5 @@
+code/obj/
+code/properties/
+*.csproj
+accesslist.txt
+tools_asset_info.bin
