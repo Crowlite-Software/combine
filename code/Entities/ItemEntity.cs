@@ -4,7 +4,7 @@ using Sandbox;
 namespace CombineControl.Entities
 {
 	[Library( "cc_item" )]
-	public partial class ItemEntity : ModelEntity
+	public partial class ItemEntity : ModelEntity, IUse
 	{
 		[Net]
 		public BaseItem Item { get; set; }
@@ -18,6 +18,19 @@ namespace CombineControl.Entities
 		public void SetItem(BaseItem newItem)
 		{
 			Item = newItem;
+		}
+
+		public bool OnUse( Entity user )
+		{
+			// Todo: Remove this when possible, only added for debug purposes
+			Delete();
+
+			return true;
+		}
+
+		public bool IsUsable( Entity user )
+		{
+			return true;
 		}
 	}
 }
