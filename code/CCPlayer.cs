@@ -23,7 +23,9 @@ namespace CombineControl
 		
 		protected override void Tick()
 		{
-			
+			base.Tick();
+
+			TickPlayerUse();
 		}
 	}
 }
