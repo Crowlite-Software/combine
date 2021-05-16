@@ -1,0 +1,20 @@
+{
+	"name": "combine",
+	"sharedassets": "*.*",
+	
+	"depends": 
+	[
+		"base",
+		"citizen",
+		"rust",
+		"sector17-assets"
+	],
+
+	"gamemodes":
+	[
+		{
+			"name": "combine",
+			"title": "CombineControl"
+		}
+	]
+}
