@@ -1,3 +1,4 @@
+using CombineControl.UI;
 using Sandbox;
 
 namespace CombineControl
@@ -9,7 +10,7 @@ namespace CombineControl
 		{
 			if ( IsServer )
 			{
-				// Todo: Add hud entity soon
+				new CCHud();
 			}
 		}
 
