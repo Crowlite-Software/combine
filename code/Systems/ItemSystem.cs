@@ -50,13 +50,13 @@ namespace CombineControl.Systems
 		}
 
 		// Todo: Make string into BaseItem when we get item system working.
-		public static void CreatePhysicalItem(string item, Vector3 pos, Angles ang)
+		public static void CreatePhysicalItem(BaseItem item, Vector3 pos, Angles ang)
 		{
 			if ( item == null )
 				return;
 
 			var ent = new ItemEntity();
-			ent.SetItem( new Melon() );
+			ent.SetItem( item );
 
 			ent.WorldPos = pos;
 			ent.WorldRot = Rotation.From( ang );
@@ -80,6 +80,9 @@ namespace CombineControl.Systems
 			if ( owner == null )
 				return;
 
+			BaseItem itemClass = ItemUtils.GetItemByName( item );
+			Log.Info( $"{itemClass}" );
+
 			Vector3 pos = Vector3.Zero;
 			Angles ang = new Angles( 0, owner.EyeAng.yaw, 0 );
 
@@ -91,7 +94,7 @@ namespace CombineControl.Systems
 
 			pos = tr.EndPos;
 
-			CreatePhysicalItem( item, pos, ang);
+			CreatePhysicalItem( itemClass, pos, ang);
 		}
 
 		[ServerCmd( "rpa_reloaditems" )]
