@@ -3,9 +3,15 @@ using CombineControl.Items;
 using Sandbox;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CombineControl.Systems
 {
+	/// <summary>
+	///
+	/// </summary>
+	///
+	/// Todo: Change all to work with an ID rather than name, this is because some items will have the same names roughly.
 	public class ItemSystem : NetworkClass
 	{
 		public static List<BaseItem> Items = new List<BaseItem>();
@@ -15,6 +21,9 @@ namespace CombineControl.Systems
 
 		}
 
+		/// <summary>
+		/// Finds all of our item classes and adds them to the global list of items.
+		/// </summary>
 		private void LoadItems()
 		{
 			// Clear the list of previous items, just in case.
@@ -89,6 +98,28 @@ namespace CombineControl.Systems
 		{
 			var _ = new ItemSystem();
 			_.LoadItems();
+		}
+
+		/// <summary>
+		/// Lists all the items with a search filter so we can search
+		/// for a specific item.
+		/// </summary>
+		/// <param name="filter">The filter we will search for</param>
+		[ServerCmd( "rpa_listitems" )]
+		public static void ListItemsCmd(string filter = "")
+		{
+			if ( filter == "" )
+				Log.Info( "Item List:" );
+			else
+				Log.Info( $"Item List: (Filter: {filter})" );
+
+			foreach ( BaseItem item in Items )
+			{
+				if ( item.ItemName.Contains( filter, StringComparison.OrdinalIgnoreCase ) )
+				{
+					Log.Info( $"Item: {item.ItemName}" );
+				}
+			}
 		}
 	}
 }
