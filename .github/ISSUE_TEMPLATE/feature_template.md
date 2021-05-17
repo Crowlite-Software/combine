@@ -6,10 +6,10 @@ labels: 'Type: Feature'
 ---
 
 ### What part of the gamemode should be improved
-<!-- Content, Flags, UI, Entities, Items, etc -->
+<!-- Content, Flags, UI, Entities, Items, etc. -->
 
 ### Describe your suggestion
-<!-- Give a clear suggestion of what you are suggesting -->
+<!-- Give a clear suggestion of what you are suggesting. -->
 
 <!--
 
@@ -19,4 +19,4 @@ labels: 'Type: Feature'
 -->
 
 ### Expected result
-<!-- Describe how the end result should look like and work -->
+<!-- Describe how the end result should look like and work. -->
