@@ -20,16 +20,23 @@ namespace CombineControl.Systems
 			// Clear the list of previous items, just in case.
 			Items.Clear();
 
-			foreach ( var item in Library.GetAllAttributes<BaseItem>() )
+			foreach ( var item in Library.GetAll<BaseItem>() )
 			{
 				// Ignore the base items
 				// Todo: Make these not hardcoded. I'm sure we're gonna have more than just 3 base classes.
-				if ( item.Title == "CombineControl.Items.BaseItem" || item.Title == "CombineControl.Items.BaseWeaponItem" || item.Title == "CombineControl.Items.BaseClothingItem" )
+				if ( item.FullName == "CombineControl.Items.BaseItem" || item.FullName == "CombineControl.Items.BaseWeaponItem" || item.FullName == "CombineControl.Items.BaseClothingItem" )
 					continue;
 
-				Log.Info( $"Found item: {item.Title}" );
+				var itemClass = Library.Create<BaseItem>( item.FullName );
+				Log.Info( $"Found item: {itemClass.ItemName}" );
+
+				Items.Add( itemClass );
 			}
 
+			foreach ( var item in Items )
+			{
+				Log.Info( $"Found item in our list: {item.ItemName}" );
+			}
 		}
 
 		// Todo: Make string into BaseItem when we get item system working.
