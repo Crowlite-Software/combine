@@ -1,8 +1,8 @@
 ---
-Name: Task
-About: Submit a task to complete
-Title: 'Task: <Title>'
-Labels: 'Type: Task'
+name: Task
+about: Submit a task to complete
+title: 'Task: <Title>'
+labels: 'Type: Task'
 ---
 
 ### Summary
