@@ -1,5 +1,6 @@
 using CombineControl.Entities;
 using CombineControl.Items;
+using CombineControl.Util;
 using Sandbox;
 using System;
 using System.Collections.Generic;
@@ -112,13 +113,10 @@ namespace CombineControl.Systems
 				Log.Info( "Item List:" );
 			else
 				Log.Info( $"Item List: (Filter: {filter})" );
-
-			foreach ( BaseItem item in Items )
+			
+			foreach ( BaseItem item in ItemUtils.GetAllItems( filter ) )
 			{
-				if ( item.ItemName.Contains( filter, StringComparison.OrdinalIgnoreCase ) )
-				{
-					Log.Info( $"Item: {item.ItemName}" );
-				}
+				Log.Info( $"Item: {item.ItemName}" );
 			}
 		}
 	}
