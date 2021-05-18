@@ -15,7 +15,7 @@ namespace CombineControl.Util
 		/// </summary>
 		/// <param name="filter">Optional search filter</param>
 		/// <returns>A list of the items within the filter</returns>
-		public static IEnumerable<BaseItem> GetAllItems(string filter = "")
+		public static IEnumerable<BaseItem> GetAllItems( string filter = "" )
 		{
 			return from item in ItemSystem.Items where item.ItemName.Contains( filter, StringComparison.OrdinalIgnoreCase ) select item;
 		}
@@ -26,7 +26,7 @@ namespace CombineControl.Util
 		/// <param name="search">The item name we are searching for</param>
 		/// <returns>The item class that we have found, returns null if no item was found</returns>
 		/// Todo: This currently relies on cap sensitivity
-		public static BaseItem GetItemByName(string search)
+		public static BaseItem GetItemByName( string search )
 		{
 			if ( !string.IsNullOrEmpty( search ) )
 			{

@@ -50,7 +50,7 @@ namespace CombineControl.Systems
 		}
 
 		// Todo: Make string into BaseItem when we get item system working.
-		public static void CreatePhysicalItem(BaseItem item, Vector3 pos, Angles ang)
+		public static void CreatePhysicalItem( BaseItem item, Vector3 pos, Angles ang )
 		{
 			if ( item == null )
 				return;
@@ -73,7 +73,7 @@ namespace CombineControl.Systems
 		///
 
 		[ServerCmd( "rpa_spawnitem" )]
-		public static void CreateItemCmd(string item)
+		public static void CreateItemCmd( string item )
 		{
 			var owner = ConsoleSystem.Caller.Pawn;
 
@@ -94,7 +94,7 @@ namespace CombineControl.Systems
 
 			pos = tr.EndPos;
 
-			CreatePhysicalItem( itemClass, pos, ang);
+			CreatePhysicalItem( itemClass, pos, ang );
 		}
 
 		[ServerCmd( "rpa_reloaditems" )]
@@ -110,13 +110,13 @@ namespace CombineControl.Systems
 		/// </summary>
 		/// <param name="filter">The filter we will search for</param>
 		[ServerCmd( "rpa_listitems" )]
-		public static void ListItemsCmd(string filter = "")
+		public static void ListItemsCmd( string filter = "" )
 		{
 			if ( filter == "" )
 				Log.Info( "Item List:" );
 			else
 				Log.Info( $"Item List: (Filter: {filter})" );
-			
+
 			foreach ( BaseItem item in ItemUtils.GetAllItems( filter ) )
 			{
 				Log.Info( $"Item: {item.ItemName}" );

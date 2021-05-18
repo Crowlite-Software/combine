@@ -20,8 +20,8 @@ namespace CombineControl
 
 			base.Respawn();
 		}
-		
-		public override void Simulate(Client cl)
+
+		public override void Simulate( Client cl )
 		{
 			base.Simulate( cl );
 

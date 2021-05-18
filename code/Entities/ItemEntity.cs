@@ -15,7 +15,7 @@ namespace CombineControl.Entities
 			SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 		}
 
-		public void SetItem(BaseItem newItem)
+		public void SetItem( BaseItem newItem )
 		{
 			Item = newItem;
 		}
