@@ -1,23 +1,31 @@
 PlayerInfo {
     position: absolute;
-    background-color: rgba(30, 30, 30, 0.80);
-    width: 320px;
-    //height: 160px;
-
-    // Font settings
-    font-family: "Myriad Pro";
-    font-size: 22px;
-    font-weight: 500;
-    color: white;
 
     // Position
     left: 20px;
     bottom: 20px;
 
     // Flex
-    justify-content: flex-end;
-    flex-direction: column;
-    padding: 10px, 10px;
+    flex-direction: column-reverse;
+
+    // Name, Credits and CID
+    .generalpanel
+    {
+        background-color: rgba(30, 30, 30, 0.80);
+        width: 320px;
+        //height: 160px;
+
+        // Font settings
+        font-family: "Myriad Pro";
+        font-size: 22px;
+        font-weight: 500;
+        color: white;
+
+        // Flex
+        justify-content: flex-end;
+        flex-direction: column;
+        padding: 10px, 10px;
+    }
 
     .name 
     {
@@ -32,5 +40,20 @@ PlayerInfo {
     .id
     {
 
+    }
+
+    // Health Bar
+    .healthpanel
+    {
+        height: 30px;
+        margin: 15px, 0px;
+        padding: 5px, 5px;
+        background-color: rgba(30, 30, 30, 0.80);
+
+        .progress-bar
+        {
+            width: 100%;
+            background-color: red;
+        }
     }
 }

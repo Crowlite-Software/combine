@@ -11,18 +11,31 @@ namespace CombineControl.UI
 	/// Todo: Add all the stuff we need here, currently we don't really have anything
 	public class PlayerInfo : Panel
 	{
+		public Panel GeneralPanel;
+
 		public Label Name;
 		public Label Balance;
 		public Label ID;
+
+		public Panel HealthPanel;
+		public Panel HealthBar;
 
 		public PlayerInfo()
 		{
 			StyleSheet.Load( "/ui/PlayerInfo.scss" );
 
-			// Add placeholder labels
-			Name = Add.Label( "John Doe", "name" );
-			Balance = Add.Label( "0 Credits", "balance" );
-			ID = Add.Label( "CID #000000", "id" );
+			GeneralPanel = Add.Panel( "generalpanel" );
+			{
+				// Add placeholder labels
+				Name = GeneralPanel.Add.Label( "John Doe", "name" );
+				Balance = GeneralPanel.Add.Label( "0 Credits", "balance" );
+				ID = GeneralPanel.Add.Label( "CID #000000", "id" );
+			}
+			// Info bars
+			HealthPanel = Add.Panel( "healthpanel" );
+			{
+				HealthBar = HealthPanel.Add.Panel( "progress-bar" );
+			}
 		}
 
 		public override void Tick()
