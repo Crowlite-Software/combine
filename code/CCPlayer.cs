@@ -3,7 +3,7 @@ using System;
 
 namespace CombineControl
 {
-	partial class CCPlayer : BasePlayer
+	partial class CCPlayer : Player
 	{
 		public override void Respawn()
 		{
@@ -21,9 +21,9 @@ namespace CombineControl
 			base.Respawn();
 		}
 		
-		protected override void Tick()
+		public override void Simulate(Client cl)
 		{
-			base.Tick();
+			base.Simulate( cl );
 
 			TickPlayerUse();
 		}

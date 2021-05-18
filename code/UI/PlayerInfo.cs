@@ -40,12 +40,12 @@ namespace CombineControl.UI
 
 		public override void Tick()
 		{
-			var player = Player.Local as CCPlayer;
+			//var player = Local.Pawn as CCPlayer;
 
 			// Probably not a good idea to put these on Tick() but idk where else to put em.
-			Name.Text = player.Name;
+			Name.Text = Local.DisplayName;
 			//Balance.Text = Balance.Text;
-			ID.Text = player.SteamId.ToString();
+			ID.Text = Local.SteamId.ToString();
 		}
 
 	}

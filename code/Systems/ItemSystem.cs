@@ -58,8 +58,8 @@ namespace CombineControl.Systems
 			var ent = new ItemEntity();
 			ent.SetItem( item );
 
-			ent.WorldPos = pos;
-			ent.WorldRot = Rotation.From( ang );
+			ent.Position = pos;
+			ent.Rotation = Rotation.From( ang );
 
 			// Todo: Think about moving this to the item instead;
 			ent.SetModel( ent.Item.ItemModel );
@@ -75,7 +75,7 @@ namespace CombineControl.Systems
 		[ServerCmd( "rpa_spawnitem" )]
 		public static void CreateItemCmd(string item)
 		{
-			var owner = ConsoleSystem.Caller;
+			var owner = ConsoleSystem.Caller.Pawn;
 
 			if ( owner == null )
 				return;
@@ -84,7 +84,7 @@ namespace CombineControl.Systems
 			Log.Info( $"{itemClass}" );
 
 			Vector3 pos = Vector3.Zero;
-			Angles ang = new Angles( 0, owner.EyeAng.yaw, 0 );
+			Angles ang = new Angles( 0, owner.EyeRot.Angles().yaw, 0 );
 
 			var tr = Trace.Ray( owner.EyePos, owner.EyePos + owner.EyeRot.Forward * 200 )
 				.UseHitboxes()

@@ -3,7 +3,7 @@ using System;
 
 namespace CombineControl
 {
-	partial class CCPlayer : BasePlayer
+	partial class CCPlayer
 	{
 		protected bool IsUseDisabled()
 		{

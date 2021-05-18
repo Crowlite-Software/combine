@@ -14,9 +14,14 @@ namespace CombineControl
 			}
 		}
 
-		public override Player CreatePlayer()
+		public override void ClientJoined( Client client )
 		{
-			return new CCPlayer();
+			base.ClientJoined( client );
+
+			var player = new CCPlayer();
+			client.Pawn = player;
+
+			player.Respawn();
 		}
 	}
 }

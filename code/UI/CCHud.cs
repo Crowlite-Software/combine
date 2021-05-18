@@ -3,7 +3,7 @@ using Sandbox.UI;
 
 namespace CombineControl.UI
 {
-	public partial class CCHud : Hud
+	public partial class CCHud : HudEntity<RootPanel>
 	{
 		public CCHud()
 		{
