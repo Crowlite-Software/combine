@@ -8,7 +8,7 @@ namespace CombineControl.Items
 	/// </summary>
 	/// 
 	/// Todo: Implement this class
-	public partial class BaseWeaponItem : BaseItem
+	public abstract class BaseWeaponItem : BaseItem
 	{
 
 	}

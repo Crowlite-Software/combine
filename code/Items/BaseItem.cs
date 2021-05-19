@@ -9,7 +9,7 @@ namespace CombineControl.Items
 	/// 
 	/// Todo: Figure out if these variables should be public or protected.
 	/// Todo: Allow items to customise their use feature, possibly something like Helix's ItemFunctions.
-	public class BaseItem : NetworkClass
+	public abstract class BaseItem : NetworkClass
 	{
 		// Todo: See if we actually need this.
 		public virtual string ItemID => "base_item";
