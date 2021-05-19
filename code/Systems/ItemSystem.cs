@@ -30,22 +30,17 @@ namespace CombineControl.Systems
 			// Clear the list of previous items, just in case.
 			Items.Clear();
 
-			foreach ( var item in Library.GetAll<BaseItem>() )
+			// Find all our item classes and ignore those listed as abstract
+			var foundItems = from item in Library.GetAll<BaseItem>()
+							 where !item.IsAbstract
+							 select item;
+			foreach ( var item in foundItems )
 			{
-				// Ignore the base items
-				// Todo: Make these not hardcoded. I'm sure we're gonna have more than just 3 base classes.
-				if ( item.FullName == "CombineControl.Items.BaseItem" || item.FullName == "CombineControl.Items.BaseWeaponItem" || item.FullName == "CombineControl.Items.BaseClothingItem" )
-					continue;
 
 				var itemClass = Library.Create<BaseItem>( item.FullName );
 				Log.Info( $"Found item: {itemClass.ItemName}" );
 
 				Items.Add( itemClass );
-			}
-
-			foreach ( var item in Items )
-			{
-				Log.Info( $"Found item in our list: {item.ItemName}" );
 			}
 		}
 
