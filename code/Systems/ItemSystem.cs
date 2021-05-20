@@ -13,13 +13,21 @@ namespace CombineControl.Systems
 	/// </summary>
 	///
 	/// Todo: Change all to work with an ID rather than name, this is because some items will have the same names roughly.
-	public class ItemSystem : NetworkClass
+	public class ItemSystem : BaseSystem
 	{
 		public static List<BaseItem> Items = new List<BaseItem>();
 
 		public ItemSystem()
 		{
 
+		}
+
+		public override bool Init()
+		{
+			// Load our items into CC
+			LoadItems();
+
+			return true;
 		}
 
 		/// <summary>
