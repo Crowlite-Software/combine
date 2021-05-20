@@ -84,6 +84,14 @@ namespace CombineControl.Systems
 				return;
 
 			BaseItem itemClass = ItemUtils.GetItemByName( item );
+
+			// Check to make sure we've actually returned an item.
+			if ( itemClass == null )
+			{
+				Log.Info( $"Error: {item} could not be found." );
+				return;
+			}
+
 			Log.Info( $"{itemClass}" );
 
 			Vector3 pos = Vector3.Zero;
