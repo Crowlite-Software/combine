@@ -13,8 +13,9 @@ namespace CombineControl.UI
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<CrosshairCanvas>();
 			RootPanel.AddChild<ChatBox>();
+			RootPanel.AddChild<KillFeed>();
 
-			// Player Info
+			// Player Hud
 			RootPanel.AddChild<PlayerInfo>();
 		}
 	}
