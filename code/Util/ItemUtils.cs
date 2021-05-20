@@ -25,12 +25,11 @@ namespace CombineControl.Util
 		/// </summary>
 		/// <param name="search">The item name we are searching for</param>
 		/// <returns>The item class that we have found, returns null if no item was found</returns>
-		/// Todo: This currently relies on cap sensitivity
 		public static BaseItem GetItemByName( string search )
 		{
 			if ( !string.IsNullOrEmpty( search ) )
 			{
-				BaseItem foundItem = ItemSystem.Items.Find( x => x.ItemName == search );
+				BaseItem foundItem = ItemSystem.Items.Find( x => x.ItemName.Equals( search, StringComparison.OrdinalIgnoreCase ) );
 
 				return foundItem;
 			}
