@@ -11,8 +11,7 @@ namespace CombineControl.Items
 	/// Todo: Allow items to customise their use feature, possibly something like Helix's ItemFunctions.
 	public abstract class BaseItem : NetworkClass
 	{
-		// Todo: See if we actually need this.
-		public virtual string ItemID => "base_item";
+		public abstract string ItemId { get; }
 
 		public virtual string ItemName => "BaseItem";
 		public virtual string ItemModel => "models/dev/error.vmdl";

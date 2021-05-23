@@ -11,8 +11,6 @@ namespace CombineControl.Systems
 	/// <summary>
 	///
 	/// </summary>
-	///
-	/// Todo: Change all to work with an ID rather than name, this is because some items will have the same names roughly.
 	public class ItemSystem : BaseSystem
 	{
 		public static List<BaseItem> Items = new List<BaseItem>();
@@ -75,7 +73,7 @@ namespace CombineControl.Systems
 		/// Console Commands
 		///
 
-		[ServerCmd( "rpa_spawnitem" )]
+		[ServerCmd( "rpa_createitem" )]
 		public static void CreateItemCmd( string item )
 		{
 			var owner = ConsoleSystem.Caller.Pawn;
@@ -83,7 +81,7 @@ namespace CombineControl.Systems
 			if ( owner == null )
 				return;
 
-			BaseItem itemClass = ItemUtils.GetItemByName( item );
+			BaseItem itemClass = ItemUtils.GetItemById( item );
 
 			// Check to make sure we've actually returned an item.
 			if ( itemClass == null )
@@ -130,7 +128,7 @@ namespace CombineControl.Systems
 
 			foreach ( BaseItem item in ItemUtils.GetAllItems( filter ) )
 			{
-				Log.Info( $"Item: {item.ItemName}" );
+				Log.Info( $"Item: {item.ItemName}, Id: {item.ItemId}" );
 			}
 		}
 	}
