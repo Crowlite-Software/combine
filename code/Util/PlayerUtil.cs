@@ -17,7 +17,7 @@ namespace CombineControl.Util
 		{
 			if ( ConsoleSystem.Caller.Pawn is CCPlayer player )
 			{
-				int oldHealth = player.Health;
+				float oldHealth = player.Health;
 				player.TakeDamage( DamageInfo.FromBullet( player.Position, Vector3.Zero, damage ) );
 
 				Log.Info( $"Old health: {oldHealth}, new health: {player.Health}" );

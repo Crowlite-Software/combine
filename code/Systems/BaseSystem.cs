@@ -7,7 +7,7 @@ namespace CombineControl.Systems
 	/// This is the base class for all our systems.
 	/// All base systems are intitliased when the game class is constructed.
 	/// </summary>
-	public abstract class BaseSystem : NetworkClass
+	public abstract class BaseSystem : NetworkComponent
 	{
 		public static List<BaseSystem> SystemsList = new List<BaseSystem>();
 
