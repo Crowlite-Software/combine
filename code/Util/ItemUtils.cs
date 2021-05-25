@@ -27,7 +27,7 @@ namespace CombineControl.Util
 		/// </summary>
 		/// <param name="search">The item name we are searching for</param>
 		/// <returns>The item class that we have found, returns null if no item was found</returns>
-		[Obsolete("Use FindItemById instead")]
+		[Obsolete("Use GetItemById instead")]
 		public static BaseItem GetItemByName( string search )
 		{
 			if ( !string.IsNullOrEmpty( search ) )
