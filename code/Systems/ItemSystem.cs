@@ -46,6 +46,17 @@ namespace CombineControl.Systems
 				var itemClass = Library.Create<BaseItem>( item.FullName );
 				Log.Info( $"Found item: {itemClass.ItemName}" );
 
+				IEnumerable<BaseItem> Duplicates = Items.Where( x => x.ItemId == itemClass.ItemId );
+
+				// Interate through the duplicates and Log them.yeah
+				foreach( var item2 in Duplicates)
+				{
+
+					// If we have the same Id we error out to make it known
+					Log.Error( $"Failed to load items: Item '{itemClass.ItemName} ({itemClass.ItemId})' has the same ItemId as '{item2.ItemName} ({item2.ItemId})'" );
+					return;
+				}
+
 				Items.Add( itemClass );
 			}
 		}
