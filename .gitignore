@@ -1,5 +1,18 @@
+# Ignore the default materials because these are
+# generated each time we load the tools for w/e reason
+materials/default/*
+
+# Source 2/Sandbox stuff
+tools_*_*.bin
+accesslist.txt
+*bakeresourcecache*
+maps/*.vpk
+maps/*.los
+
+
+# Misc stuff
+*.csproj
 code/obj/
 code/properties/
-*.csproj
-accesslist.txt
-tools_asset_info.bin
+.intermediate/
+.vs/
